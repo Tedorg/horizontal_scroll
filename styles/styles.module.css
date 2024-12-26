@@ -1,0 +1,107 @@
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: left;
+  margin: 5px 0 0 20px;
+  mix-blend-mode:difference; /* Dynamically adjust color based on background */
+
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  cursor: pointer;
+  color: rgb(255, 89, 89);
+  transition: color 0.3s ease; /* Smooth transition for text color */
+
+}
+
+
+
+
+
+
+
+
+
+.scrollWrapper {
+  display: flex; /* Align children side by side */
+  flex-direction: row; /* Horizontal layout */
+  height: 100%;
+  overflow-x: scroll; /* Enable horizontal scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+}
+
+.scrollWrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+}
+
+.imageBlock {
+  flex: none; /* Prevent shrinking */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%; /* Match parent height */
+  width: auto; /* Adjust width dynamically */
+  
+
+}
+
+img.image{
+  background-color: coral;
+  width:auto!important;
+  height:90vh!important;
+  display: block;
+}
+
+
+
+
+.image.loaded {
+  transition: blur 1s ease; /* Smooth fade-out */
+  opacity: 1; /* Fully visible after load */
+  filter: blur(0px); /* Remove blur after load */
+}
+
+.imageText {
+  height: 10%; /* Reserve 10% for text */
+  width: 100%;
+  text-align: left;
+  color: rgb(42, 41, 41);
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .scrollWrapper {
+    flex-direction: column; /* Vertical scrolling */
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .imageBlock {
+    height: auto; /* Full viewport height */
+    width: 100%; /* Full width for vertical layout */
+  }
+
+  img.image{ 
+    width: 100%!important;
+    height: auto!important;
+    
+  }
+}
