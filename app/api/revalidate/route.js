@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     // ✅ Extract secret from URL params
+    console.log("API ready");
     const url = new URL(req.url, `https://${req.headers.get("host")}`);
     const secret = url.searchParams.get("secret");
 

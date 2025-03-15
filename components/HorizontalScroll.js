@@ -58,7 +58,6 @@ export default function HorizontalScroll({ content, hasIndex }) {
           if (hasIndex) {
             margin_right = item.fields.margin || 40;
           }
-          console.log(margin_right)
   
           if (Array.isArray(item.images)) {
             return item.images.map((image, imgIndex) => (
