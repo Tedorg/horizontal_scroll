@@ -39,7 +39,7 @@ export default function ExpandableTextBlock({ text,title }) {
       ref={textBlockRef}
       className={`${styles.textBlock} ${isExpanded ? styles.expanded : ""}`} onClick={toggleExpand}
     >
-      <p>{title}</p>
+      <p>{title} {text}</p>
       {isOverflowing && !isExpanded && (
         <button className={styles.expandButton} >
           ▼
