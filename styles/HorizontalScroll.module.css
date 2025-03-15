@@ -1,0 +1,74 @@
+
+
+
+/* Overall container for horizontal scrolling */
+.scrollWrapper {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  scroll-snap-type: y mandatory;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each content block spans the full viewport height */
+.contentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  flex: none;
+  height: 100vh; /* Full viewport height */
+  width: auto; /* Match the image width */
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  margin:0 0 0 0;
+
+}
+  /* Image block takes 90% of the viewport height */
+  .imageBlock {
+    height: 90vh; /* 90% height of viewport */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(24, 210, 231, 0.558);
+  }
+
+
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+
+  .scrollWrapper {
+    flex-direction: column; /* Switch to vertical scrolling */
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+ 
+
+
+  .contentBlock {
+    padding: 0;
+    width: 100vw; /* Full width for mobile */
+    height: auto; /* Auto height for vertical scroll */
+  }
+  .imageBlock {
+    height: auto;
+  
+  }
+
+ 
+
+}
+
+
+
+

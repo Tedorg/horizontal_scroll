@@ -1,0 +1,81 @@
+.inquiryButton {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(29, 28, 28);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  padding-left: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.inquiryButton.expanded {
+  padding-right: 15px;
+}
+
+
+
+/* Keep icon at the left */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 0 0 1px;
+}
+
+.text {
+  font-size: var(--s);
+  color: #191919;
+  margin-left: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.text a {
+  font-size: var(--sm);
+
+  color: #191919;
+  text-decoration: underline;
+}
+
+/* Close button */
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.closeButton:hover {
+  color: red;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .inquiryButton {
+    width: 50px;
+  }
+
+  .inquiryButton.expanded {
+    width: auto;
+  }
+
+  .text {
+    display: block;
+  }
+}

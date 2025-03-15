@@ -1,0 +1,160 @@
+
+/* Overlay container for WelcomeText */
+.welcomeOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure it stays on top */
+    text-align: center;
+    pointer-events: none; /* Prevent interaction */
+  }
+  
+  /* Text in the overlay */
+  .welcomeText {
+    font-size: clamp(1rem, 1.5vh, 4rem); /* Responsive scaling */
+    color: white; /* Adjust based on your image contrast */
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+  }
+  
+  /* SVG graphic in the overlay */
+  .welcomeSvg {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    fill: white; /* Adjust color based on image contrast */
+  }
+  
+  
+  
+  
+  /* Overall container for horizontal scrolling */
+  .scrollWrapper {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    scroll-snap-type: y mandatory;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Each content block spans the full viewport height */
+  .contentBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    flex: none;
+    height: 100vh; /* Full viewport height */
+    width: auto; /* Match the image width */
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Image block takes 90% of the viewport height */
+  .imageBlock {
+    height: 90vh; /* 90% height of viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: auto;
+    background-color: rgba(17, 50, 54, 0.558);
+  }
+  
+  /* Image inside the image block */
+  .image {
+    height: 100%; /* Match parent height */
+    width: auto; /* Adjust width dynamically */
+    object-fit: cover; /* Cover the space */
+    opacity: 1;
+  }
+  .textBlock {
+  width: 1px;
+  min-width: 100%;
+  }
+  /* Text Block */
+  .textBlock {
+    font-size: clamp(0.8rem, 1.5vh, 2rem); /* Responsive scaling */
+  
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    padding: 1rem;
+    overflow: hidden; /* Ensures only visible content is shown */
+    text-overflow: ellipsis;
+    max-height: 10vh; /* Default height for collapsed state */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 5;
+  }
+  
+  
+  /* Expanded Text Block */
+  .textBlock.expanded {
+  position: absolute;
+  bottom: 0;
+    left: 0;
+    right: 0;
+    max-height: 90vh; /* Smoothly expands to this height */
+    overflow-y: auto; /* Adds scrolling if content exceeds the container */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque for readability */
+    transition: max-height 0.3s ease, opacity 0.4s ease; /* Smooth transition */
+  }
+  
+  /* Expand/Collapse Button */
+  .expandButton {
+    position: absolute;
+    right: 0px;
+    top:10px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+    display: block; /* Hidden by default */
+    z-index: 20;
+  }
+  
+  
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .welcomeText {
+      font-size: clamp(0.8rem, 3vw, 3rem); /* Smaller range for mobile */
+    }
+    .scrollWrapper {
+      flex-direction: column; /* Switch to vertical scrolling */
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+  
+    .contentBlock {
+      width: 100%; /* Full width for mobile */
+      height: auto; /* Auto height for vertical scroll */
+    }
+  
+    .imageBlock {
+      height: auto;
+      width: 100%;
+    }
+  
+    .image {
+      width: 100%; /* Fit to width for mobile */
+      height: auto;
+    }
+  
+    .textBlock {
+      max-height: 20vh; /* Default height for collapsed state */
+    }
+    
+  }

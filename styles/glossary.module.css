@@ -1,0 +1,45 @@
+.grid {
+  margin: 80px 10px;
+  -webkit-columns: 4 150px;
+  -moz-columns: 4 150px;
+  columns: 4 220px;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+  position: relative;
+
+  }
+  
+  .item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .heading {
+    font-size: var(--sm);
+    font-weight: 600;
+    margin: 0;
+    display: inline;
+
+  
+
+  }
+
+
+  .textBlock p{
+    display: inline;
+    font-size: var(--sm);
+
+  }
+  
+  .expanded {
+    height: auto;
+    opacity: 1;
+  }

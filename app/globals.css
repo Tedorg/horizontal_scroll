@@ -1,13 +1,15 @@
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --xxs: 0.44rem;
+  --xs: 0.75rem;
+  --s: 1.0rem;
+  --md: 1.3rem;
+  --l:1.9rem;
+  --xl:2.5rem;
+  --xxl:4.2rem;
+  --xxxl:5.5rem;
 }
 
 html,
@@ -35,8 +37,50 @@ a {
   text-decoration: none;
 }
 
+p,
+a,
+li {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--md);
+  line-height: 1.5;
+  
+  text-decoration: none;
+ 
+}
+
+  strong {
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  /* Remove bullets */
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-decoration: none;
+  font-display: swap;
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+

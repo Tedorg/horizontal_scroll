@@ -1,0 +1,53 @@
+
+
+  
+  .grid {
+    margin: 80px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    grid-auto-flow: dense; /* Optimize for filling gaps */
+    gap: 0; /* No space between items */
+    padding: 0;
+  
+    }
+    
+    /* Each item should naturally stack */
+.item {
+  background: white;
+  padding: 16px;
+ 
+  overflow: hidden;
+}
+
+/* Make items dynamically adjust height */
+.item:nth-child(odd) {
+  grid-row: span 2; /* Some items taller for variation */
+}
+
+.item:nth-child(even) {
+  grid-row: span 1; /* Some items shorter */
+}
+    
+  
+  .heading {
+    cursor: pointer;
+    font-size: var(--sm);
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .textBlock * {
+    font-size: var(--s);
+    overflow: hidden;
+    height: auto;
+   
+    padding: 0;
+  }
+  .textBlock a{
+   text-decoration: underline;
+  }
+  
+  .expanded {
+    height: auto;
+    opacity: 1;
+  }
